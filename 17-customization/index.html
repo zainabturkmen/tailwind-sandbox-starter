@@ -5,12 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            sm: "550px",
+            md: "800px",
+            lg: "1200px",
+            xl: "1440px",
+          },
+          fontFamily: {
+            sans: ["Graphik", "sans-serif"],
+            serif: ["Merriweather", "serif"]
+          },
+          extend:{
+            colors:{
+              primary:"#ff5633",
+              secondary: '#fffc33'
+            }
+          }
+        },
+      };
+    </script>
     <title>Customization</title>
   </head>
   <body
-    class="bg-black sm:bg-green-800 md:bg-primary lg:bg-yellow-800 xl:bg-purple-800 2xl:bg-orange-800"
-  >
-    <h1 class="text-white text-xl md:text-3xl xl:text-5xl">
+    class="bg-black sm:bg-green-800 md:bg-primary lg:bg-yellow-800 xl:bg-purple-800 2xl:bg-orange-800">
+    <h1 class="text-primary text-xl md:text-3xl xl:text-5xl">
       Tailwind is awesome
     </h1>
 
@@ -19,12 +40,12 @@
         const width =
           window.innerWidth ||
           document.documentElement.clientWidth ||
-          document.body.clientWidth
+          document.body.clientWidth;
 
-        document.querySelector('h1').innerHTML = `Width: ${width}`
+        document.querySelector("h1").innerHTML = `Width: ${width}`;
       }
-      window.onload = showBrowserWidth
-      window.onresize = showBrowserWidth
+      window.onload = showBrowserWidth;
+      window.onresize = showBrowserWidth;
     </script>
   </body>
 </html>
